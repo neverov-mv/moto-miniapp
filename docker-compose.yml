@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/db.sqlite:/app/db.sqlite
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
